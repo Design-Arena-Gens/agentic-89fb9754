@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ChatPT Atlas</title>
+    <meta name="description" content="ChatPT Atlas - chat with a live knowledge atlas visualization" />
+    <link rel="icon" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <div class="brand">
+          <img src="/favicon.svg" alt="ChatPT Atlas" width="28" height="28" />
+          <span>ChatPT Atlas</span>
+        </div>
+        <nav class="nav">
+          <a href="#" id="clearSession" class="link">Reset</a>
+          <a href="https://agentic-89fb9754.vercel.app" class="link" target="_blank" rel="noreferrer">Prod</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container main-grid">
+      <section class="panel chat-panel">
+        <div class="panel-header">
+          <h2>Chat</h2>
+        </div>
+        <div id="messages" class="messages" aria-live="polite"></div>
+        <form id="composer" class="composer" autocomplete="off">
+          <input id="chatInput" type="text" placeholder="Ask anything?" aria-label="Message" />
+          <button type="submit" class="send">Send</button>
+        </form>
+      </section>
+
+      <section class="panel atlas-panel">
+        <div class="panel-header">
+          <h2>Atlas</h2>
+          <div class="legend">
+            <span class="badge user">User</span>
+            <span class="badge ai">AI</span>
+            <span class="badge topic">Topic</span>
+          </div>
+        </div>
+        <div class="atlas-wrap">
+          <svg id="atlas" viewBox="0 0 1200 800" role="img" aria-label="Knowledge atlas graph"></svg>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <span>? <span id="year"></span> ChatPT Atlas</span>
+      </div>
+    </footer>
+
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
